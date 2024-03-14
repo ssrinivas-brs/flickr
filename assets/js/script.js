@@ -7,7 +7,14 @@ function searchImages() {
     $('#load').attr("style", '');
     var api = link;
     var name = $("#name").val();
-    api += "api_key=" + key + "&extras=url_h&format=json&method=flickr.photos.search&nojsoncallback=1&page=1&tags=" + name;
+
+    $("#name").on("keypress", function(event) {
+        if (event.which === 13) {
+            event.preventDefault();
+            searchImages();
+        }
+    });
+    api += "api_key=" + key + "&extras=url_h&format=json&method=flickr.photos.search&nojsoncallback=1&page=1&tags=12" + name;
     $('#load').attr("style", 'display:none');
     $.ajax({
         url: api,
