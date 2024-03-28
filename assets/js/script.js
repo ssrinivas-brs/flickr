@@ -14,7 +14,7 @@ function searchImages() {
             searchImages();
         }
     });
-    api += "api_key=" + key + "&extras=url_h&format=json&method=flickr.photos.search&nojsoncallback=1&page=1&tags=12" + name;
+    api += "api_key=" + key + "&extras=url_h&format=json&method=flickr.photos.search&nojsoncallback=1&page=1&per_page=10&tags=12" + name;
     $('#load').attr("style", 'display:none');
     $.ajax({
         url: api,
